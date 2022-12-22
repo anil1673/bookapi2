@@ -17,7 +17,12 @@ app.use(express.json());
 
 app.use("/api/auth",authRouter);
 app.use("/api/user",userRouter);
-app.use("/api/book",bookRouter)
+app.use("/api/book",bookRouter);
+
+
+app.get("/",(req,res)=>{
+    res.send("hello! this is home page....");
+})
 
 app.use((err,req,res,next)=>{
     errorStatus=err.status||500;
