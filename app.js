@@ -7,6 +7,7 @@ const cors=require("cors")
 const cookieParser=require("cookie-parser");
 const authRouter = require("./router/auth");
 const bookRouter = require("./router/book");
+const esewaRouter = require("./router/esewa");
 require("./db/conn.js")
 
 
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use("/api/auth",authRouter);
 app.use("/api/user",userRouter);
 app.use("/api/book",bookRouter);
+app.use("/api/esewa",esewaRouter);
 
 
 app.get("/",(req,res)=>{
